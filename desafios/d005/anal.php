@@ -10,11 +10,11 @@
     <main>
         <h1>Conversor de Moedas v1.0</h1>
         <?php
-            $num = $_GET["real"];
+            $num = $_GET["real"] ?? 0;
             $int = (int) $num;
             $decimal = $num - (int) $num;
             echo "<p>Analisando o número <strong>" . number_format($num, 3,",", ".") ."</strong> informado pelo usuário:</p>";
-            echo "<p><ul><li>A parte inteira do número é <strong>" . $int ."</strong></li><li>A parte fracionária do número é <strong>" . number_format($decimal, 3, ",", ".") . "</strong></li></ul></p>";
+            echo "<p><ul><li>A parte inteira do número é <strong>" . number_format($int, 0, ',', '.') ."</strong></li><li>A parte fracionária do número é <strong>" . number_format($decimal, 3, ",", ".") . "</strong></li></ul></p>";
         ?>
         <a href="javascript:history.go(-1)"><input type="button" value="Voltar"></a>
     </main>
