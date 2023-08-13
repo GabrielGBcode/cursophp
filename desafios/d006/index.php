@@ -9,7 +9,7 @@
 <body>
     <?php 
         $dividendo = $_GET["dividendo"] ?? 0;
-        $divisor = $_GET["divisor"] ?? 0;
+        $divisor = $_GET["divisor"] ?? 1;
         $resto = $dividendo % $divisor;
         $quociente = number_format($dividendo / $divisor, 0);
     ?>
