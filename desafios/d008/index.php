@@ -9,8 +9,8 @@
 <body>
     <?php 
         $num = $_GET["numero"] ?? 0;
-        $quad = number_format($num ** (1/2), 3);
-        $cub = number_format($num ** (1/3), 3);
+        $quad = number_format($num ** (1/2), 3, ',', '.');
+        $cub = number_format($num ** (1/3), 3, ',', '.');
     ?>
     <main>
         <h1>Informe um número</h1>

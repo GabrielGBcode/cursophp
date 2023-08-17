@@ -11,7 +11,7 @@
         $dividendo = $_GET["dividendo"] ?? 0;
         $divisor = $_GET["divisor"] ?? 1;
         $resto = $dividendo % $divisor;
-        $quociente = (int) ($dividendo / $divisor);
+        $quociente = (int)  ($dividendo / $divisor);
     ?>
     <main>
         <h1>Anatomia de uma Divisão</h1>
@@ -19,18 +19,30 @@
             <label for="idDividendo">Dividendo</label>
             <input type="number" name="dividendo" id="idDividendo" value="<?= $dividendo ?>">
             <label for="idDivisor">Divisor</label>
-            <input type="number" name="divisor" id="idDivisor" value="<?= $divisor ?>">
+            <input type="number" name="divisor" id="idDivisor" min="1" value="<?= $divisor ?>">
             <input type="submit" value="Analisar">
         </form>
     </main>
     <section id="resultado">
         <h2>Estrutura da Divisão</h2>
-        <?php 
-            echo "<p>Dividendo: <strong>$dividendo</strong></p>";
-            echo "<p>Divisor: <strong>$divisor</strong></p>";
-            echo "<p>Resto: <strong>$resto</strong></p>";
-            echo "<p>Quociente: <strong>$quociente</strong></p>";
-        ?>
+        <table class="divisao">
+            <tr>
+                <td><?=$dividendo?></td>
+                <td><?=$divisor?></td>
+            </tr>
+            <tr>
+                <td><?=$resto?></td>
+                <td><?=$quociente?></td>
+            </tr>
+        </table>
+        <!-- <?php 
+            echo "<ul>";
+            echo "<li>Dividendo: $dividendo</li>";
+            echo "<li>Divisor: $divisor</li>";
+            echo "<li>Resto: $resto</li>";
+            echo "<li>Quociente: $quociente</li>";
+            echo "</ul>"; 
+        ?> -->
     </section>
 </body>
 </html>
